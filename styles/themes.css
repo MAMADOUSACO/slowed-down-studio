@@ -1,0 +1,298 @@
+/* Theme Variables */
+
+/* Dark Theme (Default) */
+.theme-dark {
+    /* Primary Colors */
+    --bg-primary: #0a0b0f;
+    --bg-secondary: #111218;
+    --bg-tertiary: #1a1b23;
+    
+    /* Glass Effects */
+    --glass-bg: rgba(15, 17, 25, 0.8);
+    --panel-bg: rgba(25, 27, 35, 0.9);
+    --header-bg: rgba(15, 17, 25, 0.95);
+    --tab-bg: rgba(20, 22, 30, 0.8);
+    
+    /* Text Colors */
+    --text-primary: #e8eaed;
+    --text-secondary: #9aa0a6;
+    --text-tertiary: #5f6368;
+    
+    /* Accent Colors */
+    --accent-primary: #bb86fc;
+    --accent-secondary: #03dac6;
+    --accent-tertiary: #cf6679;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #bb86fc 0%, #6c5ce7 50%, #a29bfe 100%);
+    --gradient-secondary: linear-gradient(135deg, #03dac6 0%, #00cec9 50%, #55a3ff 100%);
+    --gradient-background: linear-gradient(135deg, #0a0b0f 0%, #1a1b23 50%, #0f1014 100%);
+    
+    /* Interactive States */
+    --hover-bg: rgba(255, 255, 255, 0.05);
+    --active-bg: rgba(255, 255, 255, 0.1);
+    --focus-ring: rgba(187, 134, 252, 0.3);
+    
+    /* Borders */
+    --border-color: rgba(255, 255, 255, 0.12);
+    --border-hover: rgba(255, 255, 255, 0.2);
+    
+    /* Buttons */
+    --btn-secondary-bg: rgba(255, 255, 255, 0.08);
+    --btn-secondary-hover: rgba(255, 255, 255, 0.12);
+    
+    /* Upload Zone */
+    --upload-bg: rgba(187, 134, 252, 0.05);
+    --upload-hover-bg: rgba(187, 134, 252, 0.1);
+    --upload-active-bg: rgba(187, 134, 252, 0.15);
+    
+    /* Input Fields */
+    --input-bg: rgba(255, 255, 255, 0.08);
+    --input-border: rgba(255, 255, 255, 0.12);
+    
+    /* Shadows */
+    --shadow-primary: rgba(187, 134, 252, 0.4);
+    --shadow-secondary: rgba(0, 0, 0, 0.5);
+    --shadow-soft: rgba(0, 0, 0, 0.2);
+    
+    /* Scrollbar */
+    --scrollbar-track: rgba(255, 255, 255, 0.05);
+    --scrollbar-thumb: rgba(255, 255, 255, 0.2);
+    --scrollbar-thumb-hover: rgba(255, 255, 255, 0.3);
+    
+    /* Audio Visualizer */
+    --visualizer-primary: #bb86fc;
+    --visualizer-secondary: #03dac6;
+    --visualizer-gradient: linear-gradient(180deg, #bb86fc 0%, #03dac6 100%);
+    
+    /* Knob Colors */
+    --knob-bg: rgba(255, 255, 255, 0.08);
+    --knob-active: var(--accent-primary);
+    --knob-track: rgba(255, 255, 255, 0.12);
+    
+    /* Playlist Colors */
+    --playlist-item-bg: rgba(255, 255, 255, 0.05);
+    --playlist-item-hover: rgba(255, 255, 255, 0.08);
+    --playlist-item-active: rgba(187, 134, 252, 0.15);
+}
+
+/* Light Theme */
+.theme-light {
+    /* Primary Colors */
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f1f3f4;
+    
+    /* Glass Effects */
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --panel-bg: rgba(255, 255, 255, 0.9);
+    --header-bg: rgba(255, 255, 255, 0.95);
+    --tab-bg: rgba(248, 249, 250, 0.8);
+    
+    /* Text Colors */
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --text-tertiary: #9ca3af;
+    
+    /* Accent Colors */
+    --accent-primary: #7c3aed;
+    --accent-secondary: #06b6d4;
+    --accent-tertiary: #ec4899;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%);
+    --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #0891b2 50%, #0284c7 100%);
+    --gradient-background: linear-gradient(135deg, #f8f9fa 0%, #e5e7eb 50%, #f3f4f6 100%);
+    
+    /* Interactive States */
+    --hover-bg: rgba(0, 0, 0, 0.04);
+    --active-bg: rgba(0, 0, 0, 0.08);
+    --focus-ring: rgba(124, 58, 237, 0.3);
+    
+    /* Borders */
+    --border-color: rgba(0, 0, 0, 0.12);
+    --border-hover: rgba(0, 0, 0, 0.2);
+    
+    /* Buttons */
+    --btn-secondary-bg: rgba(0, 0, 0, 0.04);
+    --btn-secondary-hover: rgba(0, 0, 0, 0.08);
+    
+    /* Upload Zone */
+    --upload-bg: rgba(124, 58, 237, 0.05);
+    --upload-hover-bg: rgba(124, 58, 237, 0.08);
+    --upload-active-bg: rgba(124, 58, 237, 0.12);
+    
+    /* Input Fields */
+    --input-bg: rgba(0, 0, 0, 0.04);
+    --input-border: rgba(0, 0, 0, 0.12);
+    
+    /* Shadows */
+    --shadow-primary: rgba(124, 58, 237, 0.4);
+    --shadow-secondary: rgba(0, 0, 0, 0.15);
+    --shadow-soft: rgba(0, 0, 0, 0.1);
+    
+    /* Scrollbar */
+    --scrollbar-track: rgba(0, 0, 0, 0.05);
+    --scrollbar-thumb: rgba(0, 0, 0, 0.2);
+    --scrollbar-thumb-hover: rgba(0, 0, 0, 0.3);
+    
+    /* Audio Visualizer */
+    --visualizer-primary: #7c3aed;
+    --visualizer-secondary: #06b6d4;
+    --visualizer-gradient: linear-gradient(180deg, #7c3aed 0%, #06b6d4 100%);
+    
+    /* Knob Colors */
+    --knob-bg: rgba(0, 0, 0, 0.08);
+    --knob-active: var(--accent-primary);
+    --knob-track: rgba(0, 0, 0, 0.12);
+    
+    /* Playlist Colors */
+    --playlist-item-bg: rgba(0, 0, 0, 0.03);
+    --playlist-item-hover: rgba(0, 0, 0, 0.06);
+    --playlist-item-active: rgba(124, 58, 237, 0.12);
+}
+
+/* Theme Transition Animation */
+.theme-dark,
+.theme-light {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ambient Background Effects */
+.theme-dark #background-container {
+    background: var(--gradient-background);
+    background-size: 400% 400%;
+    animation: ambientGradient 20s ease infinite;
+}
+
+.theme-light #background-container {
+    background: var(--gradient-background);
+    background-size: 400% 400%;
+    animation: ambientGradient 25s ease infinite;
+}
+
+@keyframes ambientGradient {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 100% 50%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Floating Particles Animation for Dark Theme */
+.theme-dark #background-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(187, 134, 252, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(3, 218, 198, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(207, 102, 121, 0.08) 0%, transparent 50%);
+    animation: floatingParticles 30s linear infinite;
+}
+
+.theme-light #background-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 30% 70%, rgba(124, 58, 237, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 70% 30%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.06) 0%, transparent 50%);
+    animation: floatingParticles 35s linear infinite;
+}
+
+@keyframes floatingParticles {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-100vh) rotate(360deg); }
+}
+
+/* Subtle Noise Texture */
+.theme-dark #background-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+.theme-light #background-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+/* Theme-specific glows and effects */
+.theme-dark .btn.primary {
+    box-shadow: 
+        0 4px 16px var(--shadow-primary),
+        0 0 32px rgba(187, 134, 252, 0.2);
+}
+
+.theme-dark .btn.primary:hover {
+    box-shadow: 
+        0 6px 20px var(--shadow-primary),
+        0 0 40px rgba(187, 134, 252, 0.3);
+}
+
+.theme-light .btn.primary {
+    box-shadow: 
+        0 4px 16px var(--shadow-primary),
+        0 2px 8px rgba(124, 58, 237, 0.15);
+}
+
+.theme-light .btn.primary:hover {
+    box-shadow: 
+        0 6px 20px var(--shadow-primary),
+        0 4px 12px rgba(124, 58, 237, 0.2);
+}
+
+/* Glassmorphism enhanced effects */
+.theme-dark .controls-panel,
+.theme-dark .modal-content {
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.theme-light .controls-panel,
+.theme-light .modal-content {
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* Custom properties for dynamic color adjustments */
+:root {
+    --saturation-multiplier: 1;
+    --brightness-multiplier: 1;
+    --contrast-multiplier: 1;
+}
+
+/* Accessibility: Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    #background-container,
+    #background-container::before,
+    .theme-dark,
+    .theme-light {
+        animation: none !important;
+    }
+    
+    * {
+        transition-duration: 0.01ms !important;
+    }
+}

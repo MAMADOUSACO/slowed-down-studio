@@ -1,0 +1,540 @@
+/* Global Animation Settings */
+:root {
+    --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+    --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+    --ease-spring: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Page Load Animations */
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#app {
+    animation: pageLoad 0.8s var(--ease-out-cubic) forwards;
+}
+
+/* Tab Transition Animations */
+.tab-content {
+    transition: all 0.4s var(--ease-out-cubic);
+    transform: translateX(20px);
+}
+
+.tab-content.active {
+    transform: translateX(0);
+}
+
+.tab-content.slide-left {
+    transform: translateX(-20px);
+}
+
+.tab-content.slide-right {
+    transform: translateX(20px);
+}
+
+/* Upload Zone Animations */
+.upload-zone {
+    transition: all 0.3s var(--ease-spring);
+}
+
+.upload-zone:hover {
+    transform: translateY(-2px);
+}
+
+.upload-zone.dragover {
+    animation: uploadPulse 1s ease-in-out infinite alternate;
+}
+
+@keyframes uploadPulse {
+    from {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 var(--accent-primary);
+    }
+    to {
+        transform: scale(1.02);
+        box-shadow: 0 0 0 20px transparent;
+    }
+}
+
+/* Knob Rotation Animations */
+.knob {
+    transition: all 0.3s var(--ease-out-cubic);
+}
+
+.knob:active {
+    transform: scale(0.95);
+}
+
+.knob-indicator {
+    transition: transform 0.3s var(--ease-out-cubic);
+}
+
+.knob:hover .knob-indicator {
+    animation: knobGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes knobGlow {
+    from {
+        box-shadow: 0 0 6px var(--shadow-primary);
+    }
+    to {
+        box-shadow: 0 0 12px var(--shadow-primary), 0 0 24px var(--shadow-primary);
+    }
+}
+
+/* Button Hover Animations */
+.btn, .icon-btn {
+    transition: all 0.3s var(--ease-out-cubic);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover, .icon-btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active, .icon-btn:active {
+    transform: translateY(0);
+    transition: all 0.1s var(--ease-out-quad);
+}
+
+/* Ripple Effect for Buttons */
+.btn::after, .icon-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::after, .icon-btn:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Preset Card Hover Animation */
+.preset-card {
+    transition: all 0.3s var(--ease-spring);
+}
+
+.preset-card:hover {
+    animation: presetFloat 3s ease-in-out infinite;
+}
+
+@keyframes presetFloat {
+    0%, 100% {
+        transform: translateY(-2px);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* EQ Slider Animations */
+.eq-slider {
+    transition: all 0.3s var(--ease-out-cubic);
+}
+
+.eq-slider::-webkit-slider-thumb {
+    transition: all 0.3s var(--ease-spring);
+}
+
+.eq-slider:hover::-webkit-slider-thumb {
+    animation: sliderPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes sliderPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Player Timeline Animation */
+.timeline {
+    transition: all 0.3s var(--ease-out-cubic);
+}
+
+.timeline:hover {
+    transform: scaleY(1.5);
+}
+
+.timeline-handle {
+    transition: all 0.3s var(--ease-spring);
+}
+
+.timeline:hover .timeline-handle {
+    animation: handleBounce 0.6s var(--ease-spring);
+}
+
+@keyframes handleBounce {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.3);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+/* Visualizer Animations */
+.visualizer-container {
+    transition: all 0.3s var(--ease-out-cubic);
+}
+
+.visualizer-container.fullscreen {
+    animation: visualizerExpand 0.5s var(--ease-out-cubic) forwards;
+}
+
+@keyframes visualizerExpand {
+    from {
+        height: 120px;
+        border-radius: 12px;
+    }
+    to {
+        height: 100vh;
+        border-radius: 0;
+    }
+}
+
+/* Playlist Item Animations */
+.playlist-item {
+    transition: all 0.3s var(--ease-out-cubic);
+    animation: playlistItemSlide 0.4s var(--ease-out-cubic) forwards;
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.playlist-item.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@keyframes playlistItemSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.playlist-item:hover {
+    transform: translateX(4px);
+}
+
+.playlist-item.dragging {
+    animation: dragFloat 0.3s var(--ease-out-cubic) forwards;
+}
+
+@keyframes dragFloat {
+    to {
+        transform: rotate(5deg) scale(1.05);
+        box-shadow: 0 8px 32px var(--shadow-secondary);
+    }
+}
+
+/* Album Art Rotation */
+.album-art-placeholder {
+    transition: all 0.3s var(--ease-out-cubic);
+}
+
+.album-art-placeholder.playing {
+    animation: albumRotate 10s linear infinite;
+}
+
+@keyframes albumRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Modal Animations */
+.modal {
+    animation: modalFadeIn 0.3s var(--ease-out-cubic) forwards;
+}
+
+.modal.show {
+    animation: modalShow 0.3s var(--ease-out-cubic) forwards;
+}
+
+.modal.hide {
+    animation: modalHide 0.3s var(--ease-out-cubic) forwards;
+}
+
+@keyframes modalShow {
+    from {
+        opacity: 0;
+        backdrop-filter: blur(0px);
+    }
+    to {
+        opacity: 1;
+        backdrop-filter: blur(10px);
+    }
+}
+
+@keyframes modalHide {
+    from {
+        opacity: 1;
+        backdrop-filter: blur(10px);
+    }
+    to {
+        opacity: 0;
+        backdrop-filter: blur(0px);
+    }
+}
+
+.modal-content {
+    animation: modalContentShow 0.4s var(--ease-spring) forwards;
+    transform: scale(0.8) translateY(20px);
+}
+
+.modal.show .modal-content {
+    transform: scale(1) translateY(0);
+}
+
+@keyframes modalContentShow {
+    from {
+        transform: scale(0.8) translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Loading Animation */
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border-color);
+    border-top: 3px solid var(--accent-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Audio Processing Visual Feedback */
+.processing {
+    position: relative;
+    overflow: hidden;
+}
+
+.processing::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg, 
+        transparent, 
+        var(--accent-primary),
+        transparent
+    );
+    animation: processing 1.5s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+@keyframes processing {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Glow Effects */
+.glow {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        filter: drop-shadow(0 0 10px var(--accent-primary));
+    }
+    to {
+        filter: drop-shadow(0 0 20px var(--accent-primary)) drop-shadow(0 0 30px var(--accent-primary));
+    }
+}
+
+/* Ambient Floating Animation */
+.float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Success/Error Feedback Animations */
+.success-flash {
+    animation: successFlash 0.6s var(--ease-out-cubic);
+}
+
+@keyframes successFlash {
+    0% {
+        background: var(--accent-secondary);
+        transform: scale(1);
+    }
+    50% {
+        background: var(--accent-secondary);
+        transform: scale(1.05);
+    }
+    100% {
+        background: var(--btn-secondary-bg);
+        transform: scale(1);
+    }
+}
+
+.error-shake {
+    animation: errorShake 0.5s var(--ease-out-cubic);
+}
+
+@keyframes errorShake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    75% {
+        transform: translateX(10px);
+    }
+}
+
+/* Stagger Animation for Lists */
+.stagger-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: staggerIn 0.5s var(--ease-out-cubic) forwards;
+}
+
+.stagger-item:nth-child(1) { animation-delay: 0.1s; }
+.stagger-item:nth-child(2) { animation-delay: 0.2s; }
+.stagger-item:nth-child(3) { animation-delay: 0.3s; }
+.stagger-item:nth-child(4) { animation-delay: 0.4s; }
+.stagger-item:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes staggerIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Theme Transition Animation */
+.theme-transitioning * {
+    transition: all 0.3s var(--ease-smooth) !important;
+}
+
+/* Microinteractions */
+.micro-bounce:active {
+    animation: microBounce 0.2s var(--ease-spring);
+}
+
+@keyframes microBounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Focus Ring Animation */
+*:focus {
+    animation: focusRing 0.3s var(--ease-out-cubic);
+}
+
+@keyframes focusRing {
+    from {
+        outline-width: 0;
+        outline-offset: 0;
+    }
+    to {
+        outline-width: 2px;
+        outline-offset: 2px;
+    }
+}
+
+/* Scroll-based Animations */
+.fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s var(--ease-out-cubic);
+}
+
+.fade-in-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Performance Optimizations */
+.will-change-transform {
+    will-change: transform;
+}
+
+.will-change-opacity {
+    will-change: opacity;
+}
+
+/* Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .float,
+    .glow,
+    .album-art-placeholder.playing {
+        animation: none !important;
+    }
+}

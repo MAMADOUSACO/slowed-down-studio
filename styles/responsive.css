@@ -1,0 +1,522 @@
+/* Mobile-First Responsive Design */
+
+/* Base Mobile Styles (320px+) */
+@media (max-width: 767px) {
+    /* App Layout */
+    .app-header {
+        padding: 1rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .logo-container h1 {
+        font-size: 1.2rem;
+    }
+    
+    .tab-navigation {
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    .tab-navigation::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .tab-btn {
+        padding: 0.75rem 1.5rem;
+        min-width: 120px;
+        font-size: 0.85rem;
+    }
+    
+    .main-content {
+        padding: 1rem;
+    }
+    
+    .tab-content {
+        padding: 1rem;
+    }
+    
+    /* Upload Zone */
+    .upload-zone {
+        height: 200px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .upload-content p {
+        font-size: 1rem;
+    }
+    
+    /* Controls Panel */
+    .controls-panel {
+        padding: 1.5rem;
+        border-radius: 12px;
+    }
+    
+    .section {
+        margin-bottom: 1.5rem;
+    }
+    
+    .control-group {
+        gap: 1rem;
+        justify-content: center;
+    }
+    
+    /* Knobs */
+    .knob {
+        width: 56px;
+        height: 56px;
+    }
+    
+    .knob::before {
+        width: 42px;
+        height: 42px;
+    }
+    
+    .knob::after {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .knob .knob-indicator {
+        top: 6px;
+        height: 14px;
+        transform-origin: center 22px;
+    }
+    
+    .knob-container {
+        min-width: 70px;
+    }
+    
+    .knob-container label {
+        font-size: 0.8rem;
+    }
+    
+    .knob-container .value-display {
+        font-size: 0.75rem;
+    }
+    
+    /* EQ Controls */
+    .eq-controls {
+        gap: 1rem;
+        padding: 0.75rem;
+    }
+    
+    .eq-slider {
+        width: 150px;
+    }
+    
+    /* Preset Gallery */
+    .preset-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 0.75rem;
+    }
+    
+    .preset-card {
+        padding: 0.75rem;
+    }
+    
+    .preset-card h4 {
+        font-size: 0.85rem;
+    }
+    
+    .preset-card p {
+        font-size: 0.7rem;
+    }
+    
+    /* Player */
+    .player-container {
+        max-width: 100%;
+    }
+    
+    .album-art-placeholder {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .track-info h2 {
+        font-size: 1.3rem;
+    }
+    
+    .track-info p {
+        font-size: 0.9rem;
+    }
+    
+    .player-controls {
+        gap: 0.75rem;
+    }
+    
+    .icon-btn.large {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .timeline-container {
+        gap: 0.75rem;
+    }
+    
+    .timeline-handle {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .visualizer-container {
+        height: 100px;
+    }
+    
+    /* Playlist */
+    .playlist-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        height: auto;
+    }
+    
+    .playlist-sidebar {
+        order: 2;
+        padding: 1rem;
+    }
+    
+    .playlist-main {
+        order: 1;
+        padding: 1rem;
+        min-height: 300px;
+    }
+    
+    .playlist-header {
+        margin-bottom: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+    
+    .playlist-header h2 {
+        text-align: center;
+    }
+    
+    /* Buttons */
+    .btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.85rem;
+    }
+    
+    .icon-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .playback-controls,
+    .export-controls {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    /* Modal */
+    .modal-content {
+        min-width: 280px;
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .modal-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}
+
+/* Large Mobile/Small Tablet (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+    .control-group {
+        gap: 1.5rem;
+    }
+    
+    .preset-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    }
+    
+    .album-art-placeholder {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .eq-slider {
+        width: 170px;
+    }
+}
+
+/* Tablet Portrait (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .app-header {
+        padding: 1.5rem 2rem;
+    }
+    
+    .tab-btn {
+        padding: 1rem 1.75rem;
+    }
+    
+    .main-content {
+        padding: 1.5rem;
+    }
+    
+    .controls-panel {
+        padding: 1.75rem;
+    }
+    
+    .control-group {
+        gap: 1.75rem;
+    }
+    
+    .preset-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+    }
+    
+    .album-art-placeholder {
+        width: 200px;
+        height: 200px;
+    }
+    
+    /* Playlist Layout for Tablet */
+    .playlist-container {
+        grid-template-columns: 250px 1fr;
+    }
+}
+
+/* Tablet Landscape (1024px - 1199px) */
+@media (min-width: 1024px) and (max-width: 1199px) {
+    .playlist-container {
+        grid-template-columns: 280px 1fr;
+    }
+    
+    .control-group {
+        flex-wrap: nowrap;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets */
+    .btn, .icon-btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .knob {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .timeline {
+        height: 8px;
+    }
+    
+    .timeline-handle {
+        width: 18px;
+        height: 18px;
+    }
+    
+    /* Remove hover effects on touch devices */
+    .btn:hover,
+    .icon-btn:hover,
+    .knob:hover,
+    .preset-card:hover,
+    .playlist-item:hover {
+        transform: none;
+        box-shadow: initial;
+    }
+    
+    /* Enhanced focus states for touch */
+    .btn:focus,
+    .icon-btn:focus {
+        outline: 3px solid var(--accent-primary);
+        outline-offset: 2px;
+    }
+}
+
+/* Landscape Phone Orientation */
+@media (orientation: landscape) and (max-height: 500px) {
+    .app-header {
+        padding: 0.75rem 1rem;
+    }
+    
+    .logo-container h1 {
+        font-size: 1.1rem;
+    }
+    
+    .tab-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .main-content {
+        padding: 1rem;
+    }
+    
+    .upload-zone {
+        height: 120px;
+    }
+    
+    .album-art-placeholder {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .now-playing {
+        flex-direction: row;
+        text-align: left;
+        gap: 1rem;
+    }
+    
+    .track-info h2 {
+        font-size: 1.1rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .track-info p {
+        font-size: 0.85rem;
+    }
+    
+    .visualizer-container {
+        height: 80px;
+    }
+    
+    .playlist-container {
+        grid-template-columns: 200px 1fr;
+        height: calc(100vh - 160px);
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+    /* Sharper borders and shadows */
+    .btn, .icon-btn, .knob, .controls-panel {
+        border-width: 0.5px;
+    }
+    
+    /* Enhanced gradients for retina */
+    .knob::before {
+        background: conic-gradient(
+            from 135deg,
+            transparent 0deg,
+            var(--knob-active) var(--rotation, 0deg),
+            var(--knob-track) var(--rotation, 0deg),
+            var(--knob-track) 225deg,
+            transparent 225deg
+        );
+    }
+}
+
+/* Narrow Screens (Foldable phones, etc.) */
+@media (max-width: 320px) {
+    .app-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+    
+    .tab-btn {
+        padding: 0.5rem 1rem;
+        min-width: 100px;
+    }
+    
+    .control-group {
+        justify-content: space-around;
+    }
+    
+    .eq-controls {
+        gap: 0.5rem;
+    }
+    
+    .preset-gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .modal-content {
+        min-width: 260px;
+        padding: 1rem;
+    }
+}
+
+/* Wide Screens (1200px+) */
+@media (min-width: 1200px) {
+    .main-content {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    .player-container {
+        max-width: 700px;
+    }
+    
+    .playlist-container {
+        grid-template-columns: 320px 1fr;
+    }
+    
+    .control-group {
+        gap: 2.5rem;
+    }
+}
+
+/* Ultra-wide Screens (1600px+) */
+@media (min-width: 1600px) {
+    .main-content {
+        max-width: 1600px;
+        padding: 3rem;
+    }
+    
+    .controls-panel {
+        padding: 3rem;
+    }
+    
+    .playlist-container {
+        grid-template-columns: 350px 1fr;
+        gap: 3rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    #background-container,
+    .tab-navigation,
+    .header-controls,
+    .playback-controls,
+    .export-controls,
+    .visualizer-container {
+        display: none !important;
+    }
+    
+    .main-content {
+        padding: 0;
+    }
+    
+    .controls-panel {
+        border: 1px solid #000;
+        background: white;
+        color: black;
+    }
+}
+
+/* Accessibility: Motion Sensitivity */
+@media (prefers-reduced-motion: reduce) {
+    .control-group,
+    .eq-controls,
+    .preset-gallery {
+        gap: 1rem;
+    }
+    
+    .floating,
+    .glow {
+        animation: none;
+    }
+}
+
+/* Dark Mode Preference Override */
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color-scheme: light;
+    }
+}
