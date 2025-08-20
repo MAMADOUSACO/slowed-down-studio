@@ -46,9 +46,36 @@ A comprehensive web-based audio transformation studio for creating slowed + reve
 
 ## 🚀 Quick Start
 
-1. **Clone or download** this repository
+### **Minimum Required Files:**
+You only need these files to run the app:
+```
+slowed-reverb-studio/
+├── index.html
+├── style.css  
+├── app.js
+├── js/ (all 5 JavaScript files)
+└── css/ (all 3 CSS files)
+```
+
+1. **Download the required files** (you can delete the `presets/` folder)
 2. **Open `index.html`** in a modern web browser
 3. **Start creating** - No installation or build process required!
+
+> **Note**: All presets are embedded in `editor.js`, so you don't need the JSON files in the `presets/` folder. The app works perfectly with just the HTML, CSS, and JS files!
+
+### Alternative: Local Server (Optional)
+If you want to modify the preset JSON files, you can run a local server:
+```bash
+# Using Python 3
+python -m http.server 8000
+
+# Using Node.js
+npx serve .
+
+# Using PHP
+php -S localhost:8000
+```
+Then open `http://localhost:8000` in your browser.
 
 ## 🎹 Keyboard Shortcuts
 
@@ -122,7 +149,7 @@ slowed-reverb-studio/
 ├── app.js                  # Main app controller
 ├── js/                     # JavaScript modules
 │   ├── audio-engine.js     # Web Audio API wrapper
-│   ├── editor.js           # Editor functionality
+│   ├── editor.js           # Editor functionality (includes embedded presets)
 │   ├── player.js           # Player functionality
 │   ├── playlist.js         # Playlist management
 │   └── ui-utils.js         # Utility functions
@@ -130,14 +157,16 @@ slowed-reverb-studio/
 │   ├── components.css      # UI components
 │   ├── tabs.css           # Tab-specific styles
 │   └── responsive.css     # Mobile styles
-├── presets/               # Audio effect presets
-│   ├── classic-slowed.json
-│   ├── nightcore.json
-│   ├── vaporwave.json
-│   ├── ambient.json
-│   ├── hyperpop.json
-│   └── lo-fi.json
 └── README.md              # This file
+
+# Optional (no longer needed):
+presets/                   # These JSON files are now embedded in editor.js
+├── classic-slowed.json    # Can be deleted
+├── nightcore.json         # Can be deleted  
+├── vaporwave.json         # Can be deleted
+├── ambient.json           # Can be deleted
+├── hyperpop.json          # Can be deleted
+└── lo-fi.json            # Can be deleted
 ```
 
 ## 🎯 Usage Tips
@@ -166,10 +195,20 @@ slowed-reverb-studio/
 3. Refresh the page and try again
 4. Ensure audio file is not corrupted
 
+### Preset Loading Issues
+- **Fixed**: Presets are now embedded in the code to avoid CORS issues
+- If you see preset errors, refresh the page
+- All 6 presets should load automatically
+
 ### Export Issues
 1. Wait for processing to complete
 2. Check browser's download settings
 3. Try a different export format
+
+### CORS/File Loading Issues
+- The app works directly from `index.html` (no server needed)
+- If you want to use external JSON files, run a local server
+- Avoid opening files with `file://` protocol for advanced features
 
 ### Mobile Issues
 1. Use a modern mobile browser
@@ -179,11 +218,25 @@ slowed-reverb-studio/
 ## 🔮 Future Enhancements
 
 - **Cloud Storage Integration**
-- **Collaborative Playlists**
+- **Collaborative Playlists** 
 - **More Audio Effects** (Chorus, Flanger, etc.)
 - **Spectrum Analyzer**
 - **MIDI Controller Support**
 - **Batch Processing**
+- **External Preset Loading** (if you want to use custom JSON presets)
+
+## 📦 What You Actually Need
+
+**Core Files (Required):**
+- `index.html` + `style.css` + `app.js`
+- `js/` folder (5 JavaScript files)
+- `css/` folder (3 CSS files)
+
+**Optional Files:**
+- `presets/` folder (6 JSON files) - Can be deleted since presets are embedded
+- `README.md` - Documentation
+
+**Total: 10 files minimum** for a fully functional studio!
 
 ## 🤝 Contributing
 

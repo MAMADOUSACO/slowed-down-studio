@@ -98,106 +98,140 @@ class EditorController {
   }
 
   async loadPresets() {
-    // Load preset data from JSON files
-    this.presets = {};
-    const presetNames = ['classic-slowed', 'nightcore', 'vaporwave', 'ambient', 'hyperpop', 'lo-fi'];
-    
-    for (const name of presetNames) {
-      try {
-        const response = await fetch(`presets/${name}.json`);
-        this.presets[name] = await response.json();
-      } catch (error) {
-        console.warn(`Failed to load preset: ${name}`, error);
-        // Fallback presets
-        this.presets[name] = this.getDefaultPreset(name);
-      }
-    }
-  }
-
-  getDefaultPreset(name) {
-    const presets = {
+    // Embedded preset data (avoids CORS issues with local files)
+    this.presets = {
       'classic-slowed': {
-        speed: 0.75,
-        pitch: -2,
-        reverbAmount: 25,
-        roomSize: 70,
-        decayTime: 3,
-        volume: 90,
-        bassGain: 3,
-        midGain: -1,
-        trebleGain: -2,
-        lowPassFreq: 8000,
-        compression: 15
+        name: "Classic Slowed",
+        description: "The quintessential slowed + reverb sound - deep, atmospheric, and nostalgic",
+        parameters: {
+          speed: 0.75,
+          pitch: -2,
+          reverbAmount: 25,
+          roomSize: 70,
+          decayTime: 3,
+          volume: 90,
+          bassGain: 3,
+          midGain: -1,
+          trebleGain: -2,
+          lowPassFreq: 8000,
+          compression: 15,
+          stereoWidth: 120,
+          fadeIn: 0,
+          fadeOut: 0,
+          panPosition: 0
+        }
       },
       'nightcore': {
-        speed: 1.3,
-        pitch: 4,
-        reverbAmount: 10,
-        roomSize: 30,
-        decayTime: 1.5,
-        volume: 95,
-        bassGain: -2,
-        midGain: 2,
-        trebleGain: 4,
-        lowPassFreq: 20000,
-        compression: 25
+        name: "Nightcore",
+        description: "High-energy, sped-up sound with bright, crisp characteristics",
+        parameters: {
+          speed: 1.3,
+          pitch: 4,
+          reverbAmount: 10,
+          roomSize: 30,
+          decayTime: 1.5,
+          volume: 95,
+          bassGain: -2,
+          midGain: 2,
+          trebleGain: 4,
+          lowPassFreq: 20000,
+          compression: 25,
+          stereoWidth: 110,
+          fadeIn: 0,
+          fadeOut: 0,
+          panPosition: 0
+        }
       },
       'vaporwave': {
-        speed: 0.6,
-        pitch: -4,
-        reverbAmount: 40,
-        roomSize: 80,
-        decayTime: 4,
-        volume: 85,
-        bassGain: 2,
-        midGain: -2,
-        trebleGain: -4,
-        lowPassFreq: 6000,
-        compression: 10
+        name: "Vaporwave", 
+        description: "Dreamy, nostalgic aesthetic with heavy filtering and atmospheric effects",
+        parameters: {
+          speed: 0.6,
+          pitch: -4,
+          reverbAmount: 40,
+          roomSize: 80,
+          decayTime: 4,
+          volume: 85,
+          bassGain: 2,
+          midGain: -2,
+          trebleGain: -4,
+          lowPassFreq: 6000,
+          compression: 10,
+          stereoWidth: 140,
+          fadeIn: 0.5,
+          fadeOut: 0.5,
+          panPosition: 0
+        }
       },
       'ambient': {
-        speed: 0.8,
-        pitch: 0,
-        reverbAmount: 60,
-        roomSize: 90,
-        decayTime: 6,
-        volume: 80,
-        bassGain: 1,
-        midGain: -3,
-        trebleGain: -5,
-        lowPassFreq: 4000,
-        compression: 5
+        name: "Ambient",
+        description: "Spacious, ethereal soundscape perfect for relaxation and meditation",
+        parameters: {
+          speed: 0.8,
+          pitch: 0,
+          reverbAmount: 60,
+          roomSize: 90,
+          decayTime: 6,
+          volume: 80,
+          bassGain: 1,
+          midGain: -3,
+          trebleGain: -5,
+          lowPassFreq: 4000,
+          compression: 5,
+          stereoWidth: 160,
+          fadeIn: 2,
+          fadeOut: 2,
+          panPosition: 0
+        }
       },
       'hyperpop': {
-        speed: 1.1,
-        pitch: 2,
-        reverbAmount: 15,
-        roomSize: 40,
-        decayTime: 2,
-        volume: 100,
-        bassGain: 5,
-        midGain: 3,
-        trebleGain: 6,
-        lowPassFreq: 20000,
-        compression: 40
+        name: "Hyperpop",
+        description: "Heavily processed, maximalist sound with extreme compression and EQ", 
+        parameters: {
+          speed: 1.1,
+          pitch: 2,
+          reverbAmount: 15,
+          roomSize: 40,
+          decayTime: 2,
+          volume: 100,
+          bassGain: 5,
+          midGain: 3,
+          trebleGain: 6,
+          lowPassFreq: 20000,
+          compression: 40,
+          stereoWidth: 90,
+          fadeIn: 0,
+          fadeOut: 0,
+          panPosition: 0
+        }
       },
       'lo-fi': {
-        speed: 0.9,
-        pitch: -1,
-        reverbAmount: 20,
-        roomSize: 50,
-        decayTime: 2.5,
-        volume: 85,
-        bassGain: 4,
-        midGain: -2,
-        trebleGain: -6,
-        lowPassFreq: 3000,
-        compression: 20
+        name: "Lo-Fi",
+        description: "Warm, vintage sound with reduced clarity and cozy atmosphere",
+        parameters: {
+          speed: 0.9,
+          pitch: -1,
+          reverbAmount: 20,
+          roomSize: 50,
+          decayTime: 2.5,
+          volume: 85,
+          bassGain: 4,
+          midGain: -2,
+          trebleGain: -6,
+          lowPassFreq: 3000,
+          compression: 20,
+          stereoWidth: 80,
+          fadeIn: 0.2,
+          fadeOut: 0.2,
+          panPosition: 0
+        }
       }
     };
     
-    return presets[name] || presets['classic-slowed'];
+    console.log('✅ Presets loaded successfully!');
   }
+
+
 
   loadPreset(presetName) {
     if (!this.currentFile) {
@@ -206,12 +240,14 @@ class EditorController {
     }
 
     const preset = this.presets[presetName];
-    if (preset) {
-      this.audioEngine.setParameters(preset);
+    if (preset && preset.parameters) {
+      this.audioEngine.setParameters(preset.parameters);
       this.updateAllSliders();
       this.saveToHistory();
       this.updateParameterDisplay();
-      UIUtils.showToast(`Applied ${presetName} preset`, 'success');
+      UIUtils.showToast(`Applied ${preset.name} preset`, 'success');
+    } else {
+      UIUtils.showToast(`Preset "${presetName}" not found`, 'error');
     }
   }
 
