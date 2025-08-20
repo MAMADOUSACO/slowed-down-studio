@@ -1,0 +1,25 @@
+{
+  "name": "Vaporwave",
+  "description": "Dreamy, nostalgic aesthetic with heavy filtering and atmospheric effects",
+  "parameters": {
+    "speed": 0.6,
+    "pitch": -4,
+    "reverbAmount": 40,
+    "roomSize": 80,
+    "decayTime": 4,
+    "volume": 85,
+    "bassGain": 2,
+    "midGain": -2,
+    "trebleGain": -4,
+    "lowPassFreq": 6000,
+    "compression": 10,
+    "stereoWidth": 140,
+    "fadeIn": 0.5,
+    "fadeOut": 0.5,
+    "panPosition": 0
+  },
+  "tags": ["vaporwave", "dreamy", "nostalgic", "aesthetic"],
+  "genre": "Vaporwave",
+  "mood": "dreamy",
+  "energy": "low"
+}

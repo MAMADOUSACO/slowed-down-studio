@@ -1,0 +1,25 @@
+{
+  "name": "Classic Slowed",
+  "description": "The quintessential slowed + reverb sound - deep, atmospheric, and nostalgic",
+  "parameters": {
+    "speed": 0.75,
+    "pitch": -2,
+    "reverbAmount": 25,
+    "roomSize": 70,
+    "decayTime": 3,
+    "volume": 90,
+    "bassGain": 3,
+    "midGain": -1,
+    "trebleGain": -2,
+    "lowPassFreq": 8000,
+    "compression": 15,
+    "stereoWidth": 120,
+    "fadeIn": 0,
+    "fadeOut": 0,
+    "panPosition": 0
+  },
+  "tags": ["slowed", "reverb", "atmospheric", "nostalgic"],
+  "genre": "Slowed + Reverb",
+  "mood": "chill",
+  "energy": "low"
+}

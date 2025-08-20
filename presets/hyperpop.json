@@ -1,0 +1,25 @@
+{
+  "name": "Hyperpop",
+  "description": "Heavily processed, maximalist sound with extreme compression and EQ",
+  "parameters": {
+    "speed": 1.1,
+    "pitch": 2,
+    "reverbAmount": 15,
+    "roomSize": 40,
+    "decayTime": 2,
+    "volume": 100,
+    "bassGain": 5,
+    "midGain": 3,
+    "trebleGain": 6,
+    "lowPassFreq": 20000,
+    "compression": 40,
+    "stereoWidth": 90,
+    "fadeIn": 0,
+    "fadeOut": 0,
+    "panPosition": 0
+  },
+  "tags": ["hyperpop", "processed", "maximalist", "intense"],
+  "genre": "Hyperpop",
+  "mood": "intense",
+  "energy": "very high"
+}

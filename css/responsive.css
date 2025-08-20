@@ -1,0 +1,530 @@
+/* Mobile & Responsive Styles */
+
+/* Tablet Breakpoint (768px - 1199px) */
+@media (max-width: 1199px) {
+  .editor-layout {
+    grid-template-columns: 240px 1fr 280px;
+    gap: var(--spacing-md);
+  }
+  
+  .playlist-layout {
+    grid-template-columns: 240px 1fr;
+  }
+  
+  .main-content {
+    padding: var(--spacing-md);
+  }
+}
+
+/* Small Tablet Breakpoint (768px - 991px) */
+@media (max-width: 991px) {
+  .app-title {
+    font-size: 1.2rem;
+  }
+  
+  .header-content {
+    padding: 0 var(--spacing-md);
+  }
+  
+  .tab-navigation {
+    padding: 0 var(--spacing-md);
+  }
+  
+  .tab-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+  
+  .tab-label {
+    display: none;
+  }
+  
+  .tab-icon {
+    font-size: 1.3rem;
+  }
+  
+  .editor-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    height: auto;
+    min-height: auto;
+  }
+  
+  .left-panel {
+    order: 1;
+  }
+  
+  .center-panel {
+    order: 2;
+  }
+  
+  .right-panel {
+    order: 3;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  .playlist-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    height: auto;
+  }
+  
+  .playlist-sidebar {
+    order: 1;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .playlist-main {
+    order: 2;
+  }
+  
+  .presets-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .eq-controls {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+}
+
+/* Mobile Breakpoint (767px and below) */
+@media (max-width: 767px) {
+  :root {
+    --spacing-lg: 1rem;
+    --spacing-xl: 1.5rem;
+    --spacing-2xl: 2rem;
+  }
+  
+  .app-header {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+  
+  .app-title {
+    font-size: 1rem;
+  }
+  
+  .header-controls {
+    gap: var(--spacing-xs);
+  }
+  
+  .theme-btn, .settings-btn {
+    padding: var(--spacing-xs);
+    font-size: 1rem;
+  }
+  
+  .tab-navigation {
+    padding: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--bg-tertiary);
+    border-bottom: none;
+    z-index: 100;
+    justify-content: space-around;
+  }
+  
+  .tab-btn {
+    flex: 1;
+    padding: var(--spacing-sm);
+    border-bottom: none;
+    border-top: 3px solid transparent;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+  
+  .tab-btn.active {
+    border-top-color: var(--accent-primary);
+    border-bottom-color: transparent;
+  }
+  
+  .tab-icon {
+    font-size: 1.2rem;
+  }
+  
+  .tab-label {
+    display: block;
+    font-size: 0.7rem;
+  }
+  
+  .main-content {
+    padding: var(--spacing-sm);
+    padding-bottom: 80px; /* Space for bottom navigation */
+  }
+  
+  .status-bar {
+    display: none; /* Hide on mobile to save space */
+  }
+  
+  /* Editor Mobile Layout */
+  .editor-layout {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .left-panel, .right-panel, .center-panel {
+    width: 100%;
+  }
+  
+  .right-panel {
+    max-height: none;
+  }
+  
+  .presets-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xs);
+  }
+  
+  .preset-btn {
+    padding: var(--spacing-sm);
+    font-size: 0.85rem;
+  }
+  
+  .effect-section {
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .effects-sections {
+    gap: var(--spacing-sm);
+  }
+  
+  /* Collapsible Effects on Mobile */
+  .effect-section h4 {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+  }
+  
+  .effect-section h4::after {
+    content: '▼';
+    position: absolute;
+    right: 0;
+    transition: transform var(--transition-fast);
+  }
+  
+  .effect-section.collapsed h4::after {
+    transform: rotate(-90deg);
+  }
+  
+  .effect-section.collapsed .control-group,
+  .effect-section.collapsed .eq-controls {
+    display: none;
+  }
+  
+  .waveform-canvas {
+    height: 80px;
+  }
+  
+  .playback-controls {
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+  
+  .time-display {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: var(--spacing-sm);
+  }
+  
+  .action-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* Player Mobile Layout */
+  .player-layout {
+    padding: var(--spacing-md);
+    gap: var(--spacing-lg);
+  }
+  
+  .audio-visualizer {
+    height: 150px;
+  }
+  
+  .main-controls {
+    gap: var(--spacing-md);
+  }
+  
+  .main-play {
+    min-width: 50px;
+    min-height: 50px;
+    font-size: 1.3rem;
+  }
+  
+  .timeline-container {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  .timeline-container span {
+    min-width: auto;
+  }
+  
+  .timeline {
+    margin: 0;
+    width: 100%;
+  }
+  
+  .secondary-controls {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: stretch;
+  }
+  
+  .volume-control, .speed-control {
+    justify-content: space-between;
+  }
+  
+  .volume-control input, .speed-control input {
+    width: 120px;
+  }
+  
+  .player-actions {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  /* Playlist Mobile Layout */
+  .playlist-layout {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .playlist-sidebar {
+    max-height: 150px;
+    padding: var(--spacing-md);
+  }
+  
+  .sidebar-header {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    align-items: stretch;
+  }
+  
+  .playlist-list {
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .playlist-item {
+    padding: var(--spacing-sm);
+  }
+  
+  .sidebar-actions {
+    flex-direction: row;
+    gap: var(--spacing-xs);
+  }
+  
+  .playlist-header {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: stretch;
+  }
+  
+  .playlist-stats {
+    justify-content: center;
+  }
+  
+  .playlist-controls {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .song-item {
+    padding: var(--spacing-sm);
+  }
+  
+  .song-meta {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+  
+  .song-actions {
+    opacity: 1; /* Always show on mobile */
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+  
+  .playlist-actions {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  /* Modal Mobile Adjustments */
+  .modal-content {
+    margin: var(--spacing-md);
+    padding: var(--spacing-lg);
+    min-width: auto;
+    width: calc(100% - 2rem);
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  /* Touch-friendly Controls */
+  .control-btn, .player-btn, .action-btn {
+    min-height: 44px;
+    min-width: 44px;
+    padding: var(--spacing-sm);
+  }
+  
+  input[type="range"] {
+    height: 8px;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    width: 22px;
+    height: 22px;
+  }
+  
+  /* Improve touch targets */
+  .preset-btn {
+    min-height: 48px;
+  }
+  
+  .song-item {
+    min-height: 60px;
+  }
+  
+  .playlist-item {
+    min-height: 52px;
+  }
+  
+  /* Hide overflow scrollbars on mobile */
+  .playlist-sidebar, .song-list, .effects-sections {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .playlist-sidebar::-webkit-scrollbar,
+  .song-list::-webkit-scrollbar,
+  .effects-sections::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Extra Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 0.9rem;
+  }
+  
+  .presets-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .eq-controls {
+    gap: var(--spacing-xs);
+  }
+  
+  .main-controls {
+    gap: var(--spacing-sm);
+  }
+  
+  .player-btn {
+    min-width: 40px;
+    min-height: 40px;
+  }
+  
+  .main-play {
+    min-width: 45px;
+    min-height: 45px;
+    font-size: 1.2rem;
+  }
+  
+  .param-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .effects-grid {
+    justify-content: center;
+  }
+  
+  .playlist-controls {
+    gap: var(--spacing-xs);
+  }
+}
+
+/* Landscape Mobile Adjustments */
+@media (max-width: 767px) and (orientation: landscape) {
+  .tab-navigation {
+    position: relative;
+    bottom: auto;
+  }
+  
+  .main-content {
+    padding-bottom: var(--spacing-sm);
+  }
+  
+  .audio-visualizer {
+    height: 120px;
+  }
+  
+  .player-layout {
+    gap: var(--spacing-md);
+  }
+  
+  .effect-section {
+    padding: var(--spacing-sm);
+  }
+}
+
+/* High DPI Display Adjustments */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .waveform-canvas, .audio-visualizer {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Dark Mode Media Query Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus Styles for Accessibility */
+@media (min-width: 768px) {
+  *:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .tab-navigation,
+  .status-bar,
+  .header-controls,
+  .audio-visualizer,
+  .waveform-canvas {
+    display: none !important;
+  }
+  
+  .main-content {
+    padding: 0;
+  }
+  
+  * {
+    background: white !important;
+    color: black !important;
+  }
+}
